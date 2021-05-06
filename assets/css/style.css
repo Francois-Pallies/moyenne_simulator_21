@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:focus {
+    border: none;
+    outline: none;
+}
+/*Suppression fleches input Number*/
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin:0;
+}
+
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+	-o-appearance: none;
+	margin:0
+}
+#table {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/desk.jpg);
+    background-size: cover;
+}
+#bulletin {
+    width: 770px;
+    background-image: url(../img/sheet.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#header {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    width: 770px;
+    height: 200px;
+}
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#eleve {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: 'New Tegomin', serif;
+    color: royalblue;
+    font-size: 2em;
+}
+#eleve p {
+    width: 180px;
+}
+.doc {
+    text-align: right;
+}
+.ecrit {
+    font-family: 'Indie Flower', cursive;
+    border-bottom: dashed 1px royalblue;
+    text-align: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 380px 70px 50px 250px;
+    width: 100%;
+}
+#inputs {
+    height: 450px;
+}
+#noteInputs {
+    display: flex;
+    justify-content: center;
+}
+#labels {
+    height: 450px;
+}
+#labels label {
+    font-family: 'New Tegomin', serif;
+    font-size: 2em;
+    display: flex;
+    height: 80px;
+    align-items: flex-end;
+    color: royalblue;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#gap {
+    height: 450px;
+}
+#gap p{
+    width: 50px;
+    height: 80px;
+    font-family: 'New Tegomin', serif;
+    color: royalblue;
+    font-size: 2.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+#inputs input {
+    height: 80px;
+    width: 70px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5em;
+    color: royalblue;
+    border: none;
+    border-bottom: dashed 2px rgba(65, 105, 225, 0.8);
+    margin-top: 10px;
+}
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#buttons input {
+    width: 210px;
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'New Tegomin', serif;
+    color: royalblue;
+    border: royalblue;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cadreAppreciations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 210px;
+    width: 770px;
+}
+#appreciation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 710px;
+    height: 150px;
+    outline: solid 2px rgba(65, 105, 225, 0.8);
+    font-family: 'Indie Flower', cursive;
+    font-size: 2em;
+    color: royalblue;
+    margin: auto;
+}
