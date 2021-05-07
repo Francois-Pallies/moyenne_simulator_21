@@ -1,11 +1,18 @@
 //Reset du formulaire
 $('#reset').on('click', function() {
+  $('#nameInput').val('');
   $('#noteOne').val('');
   $('#noteTwo').val('');
   $('#noteThree').val(''); 
   $('#noteFour').val('');
   $('#noteFive').val('');
   $('#appreciation').text('')
+  $('#nul').css({'display': 'none'})
+  $('#moyen').css({'display': 'none'})
+  $('#bien').css({'display': 'none'})
+  $('#tresBien').css({'display': 'none'})
+  $('#excellent').css({'display': 'none'})
+  $('#animation').removeClass('action')
 })
 
 //Click Event calucle de moyenne
@@ -16,8 +23,28 @@ $('#sumbitNotes').on('click', function() {
   let noteFour =  parseInt($('#noteFour').val());
   let noteFive = parseInt($('#noteFive').val());
 
+  //Security animation reset
+  $('#nul').css({'display': 'none'})
+  $('#moyen').css({'display': 'none'})
+  $('#bien').css({'display': 'none'})
+  $('#tresBien').css({'display': 'none'})
+  $('#excellent').css({'display': 'none'})
+  
+
+  //Vérification remplissage prénom
+  if (!$('#nameInput').val()) {
+    alert(`Oups! Il semblerait que tu aies oublié de mettre ton prénom...`)
   //Vérification des valeurs de notes
-  if (noteOne > 20 ||
+  } else if (
+    !$('#noteOne').val() ||
+    !$('#noteTwo').val() ||
+    !$('#noteThree').val() ||
+    !$('#noteFour').val() ||
+    !$('#noteFive').val() 
+  ) {
+    alert(`Attention l'étourdi, tu as oublié de renseigner une note !`)
+  } else if (
+      noteOne > 20 ||
       noteTwo > 20 || 
       noteThree > 20 || 
       noteFour > 20 || 
@@ -27,20 +54,29 @@ $('#sumbitNotes').on('click', function() {
   } else {
     //Calcule de la moyenne
     let moyenne = (noteOne + noteTwo + noteThree + noteFour + noteFive)/5;
-
+    $('#animation').addClass('action')
     //Détermination appréciations
     if (moyenne >= 0 && moyenne < 10 ) {
-      $('#appreciation').text(`Ta moyenne est de ${moyenne}. Tu es en dessous de la moyenne, c'est mal (comme la drogue m'voyez?)`)
+      $('#appreciation').text(`${$('#nameInput').val()}, avec une moyenne de ${moyenne}, tu es officiellement un cancre, et ça, c'est mal (comme la drogue m'voyez?) 💩`)
+      setTimeout(function(){$('#nul').css({'display': 'block'})}, 500)
+      setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     } else if (moyenne >= 10 && moyenne < 13 ) {
-      $('#appreciation').text(`Ta moyenne est de ${moyenne}. C'est assez moyen, poursuis tes efforts.`)
+      $('#appreciation').text(`${$('#nameInput').val()}, ta moyenne est de ${moyenne}. C'est une assez moyenne moyenne. Poursuis tes efforts.`)
+      setTimeout(function(){$('#moyen').css({'display': 'block'})}, 500)
+      setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     } else if (moyenne >= 13 && moyenne < 16 ) {
       $('#appreciation').text(
-        `Ta moyenne est de ${moyenne}.
-        C'est bien, continue ton chemin trough the sky!`)
+        `Ta moyenne est de ${moyenne}. C'est bien ${$('#nameInput').val()}, continue ton chemin trough the sky!`)
+        setTimeout(function(){$('#bien').css({'display': 'block'})}, 500)
+        setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     } else if (moyenne >= 16 && moyenne < 20 ) {
-      $('#appreciation').text(`Ta moyenne est de ${moyenne}. Bravo, c'est super chouette, tu es un excellent élément.`)
+      $('#appreciation').text(`Avec ta moyenne de ${moyenne}, tu te hisses parmi l'élite de ta classe. Bravo ${$('#nameInput').val()} !`)
+      setTimeout(function(){$('#tresBien').css({'display': 'block'})}, 500)
+      setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     } else if (moyenne === 20 ) {
-      $('#appreciation').text(`Ta moyenne est de ${moyenne}. Excellent, avec une telle moyenne, tu pourrais presque envisager de devenir formateur à La Manu :)`)
+      $('#appreciation').text(`OMG 😱! Excellent ${$('#nameInput').val()}! Ta moyenne de ${moyenne} te permettrais presque d'envisager de devenir formateur à La Manu :)`)
+      setTimeout(function(){$('#excellent').css({'display': 'block'})}, 500)
+      setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     }
   } 
 })

@@ -27,6 +27,7 @@ input::-o-outer-spin-button {
 	margin:0
 }
 #table {
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -69,6 +70,17 @@ input::-o-outer-spin-button {
 }
 #eleve p {
     width: 180px;
+}
+#eleve input {
+    width: 180px;
+    font-family: 'Indie Flower', cursive;
+    border: none;
+    border-bottom: dashed 2px royalblue;
+    text-align: center;
+    color: royalblue;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.2);
+   
 }
 .doc {
     text-align: right;
@@ -169,4 +181,61 @@ input::-o-outer-spin-button {
     font-size: 2em;
     color: royalblue;
     margin: auto;
+}
+@keyframes tamponnage {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }   
+    40% {transform: scale(1);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1);
+        opacity: 1;
+    } 
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+#animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform: translateX(280px) translateY(50px) rotate(-10deg) ;
+}
+#tampon {
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+}
+#animation.action #tampon {
+    animation: tamponnage 1s;
+}
+#excellent {
+    position: absolute;
+    z-index: 90;
+    display: none;
+}
+#tresBien {
+    position: absolute;
+    display: none;
+    z-index: 90;
+}
+#bien {
+    position: absolute;
+    display: none;
+    z-index: 90;
+}
+#moyen {
+    position: absolute;
+    display: none;
+    z-index: 90;
+}
+#nul {
+    position: absolute;
+    display: none;
+    z-index: 90;
 }
