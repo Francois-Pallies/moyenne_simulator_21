@@ -74,7 +74,7 @@ $('#sumbitNotes').on('click', function() {
       setTimeout(function(){$('#tresBien').css({'display': 'block'})}, 500)
       setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     } else if (moyenne === 20 ) {
-      $('#appreciation').text(`OMG 😱! Excellent ${$('#nameInput').val()}! Ta moyenne de ${moyenne} te permettrais presque d'envisager de devenir formateur à La Manu :)`)
+      $('#appreciation').text(`OMG 😱! Excellent ${$('#nameInput').val()}! Ta moyenne de ${moyenne} te permettrait presque d'envisager de devenir formateur à La Manu :)`)
       setTimeout(function(){$('#excellent').css({'display': 'block'})}, 500)
       setTimeout(function(){$('#animation').removeClass('action')}, 1000)
     }
