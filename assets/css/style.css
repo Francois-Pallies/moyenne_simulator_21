@@ -75,7 +75,7 @@ input::-o-outer-spin-button {
 }
 .ecrit {
     font-family: 'Indie Flower', cursive;
-    border-bottom: dashed 1px royalblue;
+    border-bottom: dashed 2px royalblue;
     text-align: center;
 }
 
